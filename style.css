@@ -55,6 +55,14 @@ button:hover{
     border: 1px solid #000;
 }
 
+.copy-btn{
+    background-color: #fff;
+    color: #000;
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
 h1{
     text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
     text-align: center;

@@ -20,6 +20,8 @@ function main(){
     const btn = document.getElementById('cng-btn');
     const output = document.getElementById('output');
     const output2 = document.getElementById('output2');
+    const copyBtn1 = document.getElementById('copy-btn1');
+    const copyBtn2 = document.getElementById('copy-btn2');
 
     btn.addEventListener('click', function(){
         const bgColor = generateHEX();
@@ -30,6 +32,15 @@ function main(){
         root.style.backgroundColor = rgbColor;
         output.value = hexColor;
         output2.value = rgbColor;
+    });
+
+    copyBtn1.addEventListener('click', function(){
+        navigator.clipboard.writeText(output.value);
+
+    });
+    copyBtn2.addEventListener('click', function(){
+        navigator.clipboard.writeText(output2.value);
+
     });
 
 }
