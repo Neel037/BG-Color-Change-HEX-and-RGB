@@ -9,6 +9,8 @@
 // Step 4: Handle the click event
 // Step 5: Handle Copy color code btn
 
+let div = null;
+
 window.onload = () =>{
     main();
 }
@@ -36,15 +38,45 @@ function main(){
     });
 
     copyBtn1.addEventListener('click', function(){
+        if (div !== null) {
+            div.remove();
+            div = null;
+        }
         navigator.clipboard.writeText(output.value);
+        generateToastMessage(`${output.value} copied`);
 
     });
     copyBtn2.addEventListener('click', function(){
+        if (div !== null) {
+            div.remove();
+            div = null;
+        }
         navigator.clipboard.writeText(output2.value);
+        generateToastMessage(`${output2.value} copied`);
 
     });
 
 }
+
+function generateToastMessage(msg) {
+    div = document.createElement('div');
+    div.innerText = msg;
+    div.className = 'toast-message toast-message-slide-in';
+
+    div.addEventListener('click', function(){
+        div.classList.remove('toast-message-slide-in');
+        div.classList.add('toast-message-slide-out');
+
+        div.addEventListener('animationend', function(){
+            div.remove();
+            div = null;
+        })
+    })
+
+    
+
+    document.body.appendChild(div);
+};
 
 
 
