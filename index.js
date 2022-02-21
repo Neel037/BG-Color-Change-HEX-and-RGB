@@ -7,6 +7,7 @@
 // Step 2: Random Color Generator Function
 // Step 3: Collect all necessary references
 // Step 4: Handle the click event
+// Step 5: Handle Copy color code btn
 
 window.onload = () =>{
     main();
